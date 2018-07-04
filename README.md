@@ -1,10 +1,10 @@
 # WeatherForeCast
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
-<br/>`Dashboard` shows the default latest weather
-<br/>`Search` User can find weather for the given city
-<br/>`About` Information about the application
-<br/>`Help` Shows how to use the applicaiton (Coming Soon)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+*`Dashboard` shows the default latest weather
+*`Search` User can find weather for the given city
+*`About` Information about the application
+*`Help` Shows how to use the applicaiton (Coming Soon)
 
 
 ## How to run this App locally
