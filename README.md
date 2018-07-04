@@ -1,6 +1,8 @@
 # WeatherForeCast
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.<br/>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+<a href="https://imgflip.com/gif/2df144"><img src="https://i.imgflip.com/2df144.gif" title="made at imgflip.com"/></a><br/>
+
 ## User Stories
 * `Dashboard` shows the weather for the default city (currently set to Toronto)
 * `Search` User can find weather for the given city
