@@ -13,16 +13,25 @@ export class ForecastService {
   constructor(
     private http: HttpClient) {
   }
-/**Fetch weather for the given city */
+
+  /**
+  * This is the getWeather function
+  * @param city takes city as a parameter
+  * @returns returns an object of weather for the given city
+  */
   getWeather(city): Observable<Weather[]> {
-    const param = city || 'Toronto';
-    return this.http.get(`${AppSettings.API_ENDPOINT}&city=${param}`).pipe(map(res => 
+    const param = city || AppSettings.DEFAULT_CITY;
+    return this.http.get(`${AppSettings.API_ENDPOINT}&city=${param}`).pipe(map(res =>
       res['data']
     )
   ).catch(this.errorHandler);
   }
 
+   /**
+  * This is the errorHandler function
+  * @returns returns an error
+  */
   errorHandler() {
-    return Observable.throw("Invalid City name");
+    return Observable.throw(AppSettings.ERROR_MSG);
   }
 }

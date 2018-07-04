@@ -5,6 +5,7 @@ import { map } from "rxjs/operators";
 
 import { ForecastService } from '../../services/forecast.service';
 import { Weather } from "../../models/weather.model";
+import {AppSettings} from '../../constants/app-settings';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
     navigator.geolocation.getCurrentPosition api
   */
   ngOnInit() {
-    const weather$ = this.forecastService.getWeather('Toronto');
+    const weather$ = this.forecastService.getWeather(AppSettings.DEFAULT_CITY);
     this.weatherData$ = weather$.pipe(map(res => res));
   }
 

@@ -8,7 +8,10 @@ import {
   MatTableModule,
   MatIconModule,
   MatSidenavModule,
-  MatDialogModule } from '@angular/material';
+  MatToolbarModule,
+  MatListModule,
+  MatDialogModule,
+ } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -43,6 +46,8 @@ import { NavComponent } from './components/nav/nav.component';
     MatInputModule,
     MatCardModule,
     MatTableModule,
+    MatToolbarModule,
+    MatListModule,
     MatIconModule,
     MatSidenavModule,
     MatDialogModule
