@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { AppSettings } from '../../constants/app-settings';
-
-
 @Component({
   selector: 'nav',
   templateUrl: './nav.component.html',

@@ -1,9 +1,9 @@
-import { AfterViewInit,Component,ElementRef, Input,ViewChild } from '@angular/core';
-import { FormBuilder,Validators } from '@angular/forms';
-import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
-import {fromEvent} from 'rxjs/observable/fromEvent';
-import {Observable} from 'rxjs';
-import {map} from "rxjs/operators";
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+import { Observable } from 'rxjs';
+import { map } from "rxjs/operators";
 
 import { ForecastService } from '../../services/forecast.service';
 import { Weather } from "../../models/weather.model";
@@ -13,48 +13,51 @@ import { Weather } from "../../models/weather.model";
   styleUrls: ['./search.component.css']
 })
 
-export class SearchWeatherComponent implements AfterViewInit  {
-
+export class SearchWeatherComponent implements AfterViewInit {
   public errorMsg;
   public data;
-  hideTable : boolean = true;
-  @Input('placeholder')
-  text='City Name'
+  hideTable: boolean = true;
   displayedColumns = ["temp", "weather.description", "timezone", "more"];
   form;
-
-  @ViewChild('input') input: ElementRef;
   weatherData$: Observable<Weather[]>;
 
-  constructor(private forecastService: ForecastService, private fb : FormBuilder) { 
+  @Input('placeholder')
+  text = 'City Name'
+
+  @ViewChild('input') input: ElementRef;
+
+  constructor(private forecastService: ForecastService, private fb: FormBuilder) {
     this.form = fb.group({
-      city:['', Validators.required]
+      city: ['', Validators.required]
     })
   }
+
   /** get weather for given city with debounceTime = 350ms*/
- ngAfterViewInit() {
-    fromEvent(this.input.nativeElement,'keyup')
+  ngAfterViewInit() {
+    fromEvent(this.input.nativeElement, 'keyup')
       .pipe(
         debounceTime(350),
         distinctUntilChanged(),
         tap(() => {
           const weather$ = this.forecastService.getWeather(this.input.nativeElement.value);
-          this.weatherData$ = weather$.pipe(map(res => res) );
+          this.weatherData$ = weather$.pipe(map(res => res));
           weather$.subscribe(
-            data => {this.data = data;this.errorMsg='';this.hideTable=false;},
-            error => {this.errorMsg = error;this.hideTable=true; }
+            data => { this.data = data; this.errorMsg = ''; this.hideTable = false; },
+            error => { this.errorMsg = error; this.hideTable = true; }
           )
         })
       )
       .subscribe()
   }
-  ngOnInit() {
-  }
-  /**Clear input value and disable clear button */
-  clear(input){
-    input.value='';
+
+  /**
+  * This is the resetSearch function and reset the searchInputField to empty
+  * @param searchInputField searchInputField as a parameter
+  */
+  resetSearch(input) {
+    input.value = '';
     this.form.setErrors({ 'invalid': true });
-    this.errorMsg='';
-    this.hideTable=true;
+    this.errorMsg = '';
+    this.hideTable = true;
   }
 }

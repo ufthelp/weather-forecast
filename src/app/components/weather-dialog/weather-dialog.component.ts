@@ -1,13 +1,12 @@
-import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { Weather } from "../../models/weather.model";
-
 @Component({
     selector: 'weather-dialog',
     templateUrl: './weather-dialog.component.html',
     styleUrls: ['./weather-dialog.component.css']
 })
-export class WeatherDialogComponent implements OnInit {
+export class WeatherDialogComponent {
     city: string;
     condition: string;
     datetime: string;
@@ -31,11 +30,9 @@ export class WeatherDialogComponent implements OnInit {
         this.timezone = timezone;
         this.temp = temp;
     }
-
-    ngOnInit() {
-
-    }
-    /** Close weather info dialog */
+    /**
+    * This is the close function to close the weather info dialog
+    */
     close() {
         this.dialogRef.close();
     }

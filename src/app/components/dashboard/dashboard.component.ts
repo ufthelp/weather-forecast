@@ -14,7 +14,6 @@ import { AppSettings } from '../../constants/app-settings';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public errorMsg;
   weatherData$: Observable<Weather[]>;
   /**Columns to be shown in weather-table */
   displayedColumns = ["temp", "weather.description", "timezone", "more", "search"];
