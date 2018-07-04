@@ -1,0 +1,18 @@
+<mat-card class="container">
+    <mat-card-content class="city">
+    <form class="form" [formGroup]="form">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="{{text}}" [(ngModel)]="city" formControlName="city" #input>
+        </mat-form-field> 
+        <div *ngIf="errorMsg" class="error">
+                {{errorMsg}}
+        </div>  
+    </form>
+    </mat-card-content>
+    <mat-card-actions >
+        <button mat-raised-button (click)="clear(input)" [disabled]="!form.valid || city === ''|| city == null" class="clear">Clear</button>
+    </mat-card-actions>
+</mat-card>
+<div *ngIf="!hideTable">
+    <weather-table  [data]="weatherData$" [cols]="displayedColumns" ></weather-table>
+</div> 
