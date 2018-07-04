@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AppSettings } from '../../constants/app-settings';
+
 
 @Component({
   selector: 'nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
-  title = 'Weather Forecast';
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class NavComponent {
+  title = AppSettings.APP_TITLE;
 }

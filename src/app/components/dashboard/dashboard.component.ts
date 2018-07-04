@@ -5,7 +5,7 @@ import { map } from "rxjs/operators";
 
 import { ForecastService } from '../../services/forecast.service';
 import { Weather } from "../../models/weather.model";
-import {AppSettings} from '../../constants/app-settings';
+import { AppSettings } from '../../constants/app-settings';
 
 
 @Component({
@@ -17,8 +17,8 @@ export class DashboardComponent implements OnInit {
   public errorMsg;
   weatherData$: Observable<Weather[]>;
   /**Columns to be shown in weather-table */
-  displayedColumns = ["temp", "weather.description", "timezone", "more","search"];
-  
+  displayedColumns = ["temp", "weather.description", "timezone", "more", "search"];
+
   constructor(private forecastService: ForecastService, private dialog: MatDialog) { }
 
   /* Fetching the Weather for current user location 
