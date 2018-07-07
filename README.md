@@ -1,15 +1,17 @@
 # WeatherForeCast
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.<br/>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
-*`Dashboard` shows the default latest weather
-*`Search` User can find weather for the given city
-*`About` Information about the application
-*`Help` Shows how to use the applicaiton (Coming Soon)
+<a href="https://gifyu.com/image/HufF"><img src="https://s1.gifyu.com/images/weather-app.gif" alt="weather-app.gif" border="0" /></a>
+## User Stories
+* `Dashboard` shows the weather for the default city (currently set to Toronto)
+* `Search` User can find weather for the given city
+* `About` Information about the application
+* `Help` Shows how to use the applicaiton (Coming Soon)
 
 
 ## How to run this App locally
 Clone the repo > `npm install`
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
