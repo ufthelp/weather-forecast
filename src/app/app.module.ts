@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { 
-  MatButtonModule, 
-  MatInputModule, 
-  MatCardModule, 
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatCardModule,
   MatTableModule,
   MatIconModule,
   MatSidenavModule,

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog, MatDialogConfig } from "@angular/material";
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { Router } from '@angular/router';
 import { Weather } from '../../models/weather.model';
 import { WeatherDialogComponent } from '../weather-dialog/weather-dialog.component';
 
 @Component({
-  selector: 'weather-table',
+  selector: 'app-weather-table',
   templateUrl: './weather-table.component.html',
   styleUrls: ['./weather-table.component.css']
 })
